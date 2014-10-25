@@ -1,0 +1,56 @@
+<!--<#= form_for(@user) do |f| %>
+  <# if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><#= pluralize(@user.errors.count, "error") %> prohibited this post from being saved:</h2>
+      <ul>
+        <# @user.errors.full_messages.each do |message| %>
+          <li><#= message %></li>
+        <# end %>
+      </ul>
+    </div>
+  <# end %>-->
+
+<!--
+notes of how I modified form to serve as dummy placeholder until authentication is set up:
+
+1) all of the following ruby lines in the form should begin with "f." ex: f.label, f.text_field, etc.
+
+2) added ", nil, class: 'text_field'" or equivalent to the text/password fields to get rid of error that was being thrown up
+
+3) changed "button" to "button_tag" to get rid of error
+-->
+
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="field">
+        <%= label :name, nil, class: 'post_label' %><br>
+        <%= text_field :name, nil, class: 'text_field'%>
+      </div>
+    </div>
+  </div>
+  <div class="large-12 columns">
+    <div class="field">
+      <%= label :email, nil, class: 'post_label' %><br>
+      <%= text_field :email, nil, class: 'text_field'%>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-6 columns">
+      <div class="field">
+        <%= label :password, nil, class: 'post_label' %><br>
+        <%= password_field :password, nil, class: 'password_field'%>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-6 columns">
+      <div class="field">
+        <%= label :password_confirmation, nil, class: 'post_label' %><br>
+        <%= password_field :password_confirmation, nil, class: 'password_field'%>
+      </div>
+    </div>
+  </div>
+  <div class="actions">
+    <%= button_tag :submit, class: "radius small" %>
+  </div>
+<!--<# end %>-->
