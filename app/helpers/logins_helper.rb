@@ -1,5 +1,5 @@
 module LoginsHelper
-  def login(user)
+  def log_in(user)
     login[:user_id] = user.id
   end
 
