@@ -1,19 +1,22 @@
-<h1>Problems#show</h1>
-<p>Find me in app/views/problems/show.html.erb</p>
-<br> The problem
-<br>
-<div class="notes_wrapper">
-  <div class="row">
-    <div class='headings'>
-      <h4 class="large-12 columns">Notes</h4>
-    </div>
-  </div>
+<div class="content">
+  <h1>Problems#show</h1>
+  <p>Find me in app/views/problems/show.html.erb</p>
+  <br> The problem
   <br>
-  <!--<# @notes.each do |note| %>
-    <p><#= note.text %></p>
-    <p>Answered by <#= note.user.name %></p>
-  <# end %>-->
+  <div class="notes_wrapper">
+    <div class="row">
+      <div class='headings'>
+        <h4 class="large-12 columns">Notes</h4>
+      </div>
+    </div>
+    <br>
+    <!--<# @notes.each do |note| %>
+      <p><#= note.text %></p>
+      <p>Answered by <#= note.user.name %></p>
+    <# end %>-->
+  </div>
+  <p>Create a new note</p>
+  <div class="formwrap">
+    <%= render "notes/note_form" %>
+  </div>
 </div>
-
-<p>Create a new note</p>
-<%= render "notes/note_form" %>
