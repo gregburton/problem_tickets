@@ -42,10 +42,16 @@ group :development do
   gem "binding_of_caller"
   gem "faker"
   gem "pry-rails"
+  gem "did_you_mean"
 end
 
 group :test do
   gem 'shoulda'
   gem 'capybara'
 end
+
+gem 'foundation-rails'
+gem 'simple_form'
+gem 'font-awesome-rails'
+gem 'rails_12factor'
 
