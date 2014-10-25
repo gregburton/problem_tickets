@@ -46,6 +46,7 @@ group :development do
   gem "did_you_mean"
   gem "quiet_assets"
   # gem "spring"
+  gem "faker"
 end
 
 group :test do

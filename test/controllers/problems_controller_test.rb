@@ -19,6 +19,7 @@ class ProblemsControllerTest < ActionController::TestCase
   end
 
   test 'post create is unsuccessful with invalid attributes' do
+    @current_user = User.first
     invalid_params = { description: '', attempt: '' }
     assert_no_difference 'Problem.count' do
       post :create, problem: invalid_params
