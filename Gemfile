@@ -44,6 +44,8 @@ group :development do
   gem "faker"
   gem "pry-rails"
   gem "did_you_mean"
+  gem "quiet_assets"
+  gem "spring"
 end
 
 group :test do
