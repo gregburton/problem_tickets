@@ -11,5 +11,30 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require font-awesome
  *= require_self
+ *= require foundation_and_overrides
+
  */
+
+/* color palette:
+#D77A44 - burnt orange
+#B1C392 - light pale green
+#274245 - dark blue-green
+#DFD6AE - creamy tan
+#FEFEFE - basically white
+*/
+
+.topnav {
+    background-color: #B1C392;
+    color: #274245;
+    height: 28px;
+    text-align: center;
+}
+
+#navlist li
+{
+    display: inline;
+    list-style-type: none;
+    padding-right: 20px;
+}

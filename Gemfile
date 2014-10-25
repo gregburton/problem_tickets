@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '2.1.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
@@ -42,10 +43,18 @@ group :development do
   gem "binding_of_caller"
   gem "faker"
   gem "pry-rails"
+  gem "did_you_mean"
+  gem "quiet_assets"
+  gem "spring"
 end
 
 group :test do
   gem 'shoulda'
   gem 'capybara'
 end
+
+gem 'foundation-rails'
+gem 'simple_form'
+gem 'font-awesome-rails'
+gem 'rails_12factor'
 
