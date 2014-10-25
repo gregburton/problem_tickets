@@ -17,7 +17,8 @@
 
  */
 
-/* color palette:
+
+/* color palette for site:
 #D77A44 - burnt orange
 #B1C392 - light pale green
 #274245 - dark blue-green
@@ -25,6 +26,8 @@
 #FEFEFE - basically white
 */
 
+
+/* navbar stuff*/
 .topnav {
     background-color: #B1C392;
     color: #274245;
@@ -37,4 +40,60 @@
     display: inline;
     list-style-type: none;
     padding-right: 20px;
+}
+
+.current_user {
+    color: #274245;
+    margin-top: 9px;
+}
+
+
+/* general stuff */
+
+body {
+    background-color: #fefefe;
+    font-family: Helvetica Neue;
+    font-size: 15px;
+    color: #274245;
+    min-width: 755px;
+}
+
+h1 {
+    color: #d77a44;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px grey,
+    1px 1px 1px #000;
+}
+
+.content {
+    margin: 0px 50px 0px 50px;
+    max-width: 775px;
+}
+
+/* on root (problems index) page */
+
+table {
+    width: 700px;
+    /*background-color: #DFD6AE;*/
+}
+
+.icon {
+    text-align: center;
+    color: #274245;
+}
+
+.explain {
+    color: #274245;
+}
+
+
+/* for form pages */
+
+.formwrap {
+    max-width: 500px;
+}
+
+.negative_formwrap {
+    margin-left: -15px;
+    max-width: 500px;
 }
