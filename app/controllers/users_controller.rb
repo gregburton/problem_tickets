@@ -9,6 +9,7 @@ class UsersController < ApplicationController
       flash[:success] = "User Created"
       redirect_to logins_new_path
     else
+      flash[:error] = "There was a problem creating your account."
       render :new
     end
   end
