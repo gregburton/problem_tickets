@@ -1,24 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'logins/new'
-
-  get 'logins/create'
-
-  get 'logins/destroy'
-
-  get 'notes/create'
-
-  get 'problems/new'
-
-  get 'problems/show'
-
-  get 'problems/index'
-
-  get 'problems/create'
-
-  get 'users/new'
-
-  get 'users/create'
 
   resources :users, :only => [:new, :create]
   resources :logins, :only => [:new, :create, :destroy]
