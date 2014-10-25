@@ -92,3 +92,8 @@ table {
 .formwrap {
     max-width: 500px;
 }
+
+.negative_formwrap {
+    margin-left: -15px;
+    max-width: 500px;
+}
