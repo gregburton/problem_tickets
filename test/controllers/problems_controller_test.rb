@@ -1,23 +1,39 @@
 require 'test_helper'
 
 class ProblemsControllerTest < ActionController::TestCase
-  test "should get new" do
+  test 'get new is successful' do
     get :new
+    assert_kind_of Problem, assigns(:problem)
     assert_response :success
   end
 
-  test "should get show" do
-    get :show
-    assert_response :success
+  test 'post create is successful with valid attributes' do
+    problem_params = { description: 'How?',
+                       attempt: "I'm trying!"}
+    assert_difference 'Problem.count' do
+      post :create, problem: problem_params
+    end
+    assert_redirected_to problem_path(@problem)
   end
 
-  test "should get index" do
+  test 'post create is unsuccessful with invalid attributes' do
+    invalid_params = { description: '', attempt: '' }
+    assert_no_difference 'Problem.count' do
+      post :create, problem: invalid_params
+    end
+    assert_template 'new'
+  end
+
+  test 'get index is successful & lists only unsolved problems' do
     get :index
+    assert_includes assigns(:problem), problems(:one)
+    refute_includes assigns(:problem), problems(:two)
     assert_response :success
   end
 
-  test "should get create" do
-    get :create
+  test 'get show is successful' do
+    get :show, id: problems(:one).id
+    assert_equal problems(:one), assigns(:problem)
     assert_response :success
   end
 

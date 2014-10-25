@@ -1,11 +1,10 @@
 require 'test_helper'
 
 class UsersControllerTest < ActionController::TestCase
-  context "GET :new" do
-    setup { get :new}
-
-    should respond_with(:ok)
-    should render_template(:new)
+  test 'get new is successful' do
+    get :new
+    assert_kind_of User, assigns(:user)
+    assert_response :success
   end
 
   test 'post create is successful with valid attributes' do
