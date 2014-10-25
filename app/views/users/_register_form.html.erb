@@ -1,14 +1,14 @@
-<!--<#= form_for(@user) do |f| %>
-  <# if @user.errors.any? %>
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
     <div id="error_explanation">
-      <h2><#= pluralize(@user.errors.count, "error") %> prohibited this post from being saved:</h2>
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this post from being saved:</h2>
       <ul>
-        <# @user.errors.full_messages.each do |message| %>
-          <li><#= message %></li>
-        <# end %>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
-  <# end %>-->
+  <% end %>
 
 <!--
 notes of how I modified form to serve as dummy placeholder until authentication is set up:
@@ -23,35 +23,35 @@ notes of how I modified form to serve as dummy placeholder until authentication 
   <div class="row">
     <div class="small-12 columns">
       <div class="field">
-        <%= label :name, nil, class: 'post_label' %><br>
-        <%= text_field :name, nil, class: 'text_field'%>
+        <%= f.label :name, nil, class: 'post_label' %><br>
+        <%= f.text_field :name %>
       </div>
     </div>
   </div>
   <div class="large-12 columns">
     <div class="field">
-      <%= label :email, nil, class: 'post_label' %><br>
-      <%= text_field :email, nil, class: 'text_field'%>
+      <%= f.label :email, nil, class: 'post_label' %><br>
+      <%= f.text_field :email %>
     </div>
   </div>
   <div class="row">
     <div class="small-6 columns">
       <div class="field">
-        <%= label :password, nil, class: 'post_label' %><br>
-        <%= password_field :password, nil, class: 'password_field'%>
+        <%= f.label :password, nil, class: 'post_label' %><br>
+        <%= f.password_field :password %>
       </div>
     </div>
   </div>
   <div class="row">
     <div class="small-6 columns">
       <div class="field">
-        <%= label :password_confirmation, nil, class: 'post_label' %><br>
-        <%= password_field :password_confirmation, nil, class: 'password_field'%>
+        <%= f.label :password_confirmation, nil, class: 'post_label' %><br>
+        <%= f.password_field :password_confirmation %>
       </div>
     </div>
   </div>
 </div>
   <div class="actions">
-    <%= button_tag :submit, class: "radius small" %>
+    <%= f.button :submit, class: "radius small" %>
   </div>
-<!--<# end %>-->
+<% end %>
