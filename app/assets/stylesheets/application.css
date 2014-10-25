@@ -25,6 +25,7 @@
 #FEFEFE - basically white
 */
 
+/* navbar stuff*/
 .topnav {
     background-color: #B1C392;
     color: #274245;
@@ -37,4 +38,53 @@
     display: inline;
     list-style-type: none;
     padding-right: 20px;
+}
+
+.current_user {
+    color: #274245;
+    margin-top: 9px;
+}
+
+/* general stuff */
+
+body {
+    background-color: #fefefe;
+    font-family: Helvetica Neue;
+    font-size: 15px;
+    color: #274245;
+}
+
+h1 {
+    color: #d77a44;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px grey,
+    1px 1px 1px #000;
+}
+
+.content {
+    margin: 0px 50px 0px 50px;
+}
+
+/* on root (problems index) page */
+
+table {
+    width: 700px;
+    color: #274245;
+}
+
+
+.features {
+    height: 325px;
+    max-width: 700px;
+
+}
+.icons {
+    width: 75px;
+    text-align: center;
+    float: left;
+}
+
+.descriptions {
+    width: 550px;
+    float: right;
 }
