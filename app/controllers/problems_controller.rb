@@ -4,8 +4,8 @@ class ProblemsController < ApplicationController
   end
 
   def create
-    @problem = Problem.new(problem_params, user_id: @current_user)
-    p @current_user
+    @problem = @current_user.problems.build(problem_params)
+    @problem.save
     if @problem.save
       flash[:success] = "Your problem has been posted for solving."
       redirect_to problem_path(@problem)

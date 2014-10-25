@@ -8,8 +8,10 @@ class ProblemsControllerTest < ActionController::TestCase
   end
 
   test 'post create is successful with valid attributes' do
+    @current_user = User.first
     problem_params = { description: 'How?',
                        attempt: "I'm trying!"}
+
     assert_difference 'Problem.count' do
       post :create, problem: problem_params
     end
