@@ -65,6 +65,11 @@ h1 {
     1px 1px 1px #000;
 }
 
+h2 {
+    color: #274245;
+    font-weight: bold;
+}
+
 h3 {
     color: #d77a44;
     font-weight: bold;
@@ -135,4 +140,8 @@ table {
 .negative_formwrap {
     margin-left: -15px;
     max-width: 500px;
+}
+
+.gap {
+    height: 40px;
 }

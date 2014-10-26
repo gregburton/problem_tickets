@@ -1,4 +1,5 @@
 <% if logged_in? %>
+  <h3 class="dark">Create a new Note</h3>
   <%= form_for @note, :url => problem_notes_path(@problem.id), :html => { :method => :post } do |f| %>
     <%= f.text_area :text, :placeholder => "Add your Note here" %>
     <%= button_tag 'Submit' %>
