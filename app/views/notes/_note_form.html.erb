@@ -1,9 +1,10 @@
 <% if logged_in? %>
-  <%= form_for @problem.note do |f| %>
-    <%= f.text_area :text, :placeholder => "add your answer here" %>
-    <%= f.button_tag 'Answer' %>
+  <%= form_for @note, :url => problem_notes_path(@problem.id), :html => { :method => :post } do |f| %>
+    <%= f.text_area :text, :placeholder => "Add your note here" %>
+    <%= button_tag 'Submit' %>
   <% end %>
 
 <% else %>
   <%= link_to 'Please log in to leave a note for this problem', new_login_path %>
 <% end %>
+
