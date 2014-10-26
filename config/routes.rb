@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   resources :users, :only => [:new, :create, :index]
   resources :logins, :only => [:new, :create, :destroy]
   resources :problems, :only => [:new, :show, :index, :create] do
+    member do
+      put 'solved'
+    end
     resources :notes, :only => [:create]
-
   end
 
   delete 'logout' => 'logins#destroy'

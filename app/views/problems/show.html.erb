@@ -1,6 +1,11 @@
 <div class="content">
   <h1><%= @problem.description %></h1>
   <p><%= @problem.attempt %></p>
+  <% if current_user == @problem.user %>
+    <i class="fa fa-thumbs-up fa-4x">
+      <%= link_to "Solved", solved_problem_path(@problem),  method: :put, data: { confirm: "Are you sure this is solved?" }%>
+    </i>
+  <% end %>
   <br>
   <div class="notes_wrapper">
     <div class="row">

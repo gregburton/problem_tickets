@@ -23,6 +23,12 @@ class ProblemsController < ApplicationController
     @problems = Problem.where(solved: false)
   end
 
+  def solved
+    @problem = Problem.find(params[:id])
+    @problem.update_attributes(solved: true)
+    redirect_to root_path
+  end
+
   private
 
   def problem_params
