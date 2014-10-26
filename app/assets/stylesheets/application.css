@@ -65,6 +65,11 @@ h1 {
     1px 1px 1px #000;
 }
 
+h3 {
+    color: #d77a44;
+    font-weight: bold;
+}
+
 .content {
     margin: 0px 50px 0px 50px;
     max-width: 775px;
@@ -90,7 +95,6 @@ a:active {
 
 table {
     width: 700px;
-    /*background-color: #DFD6AE;*/
 }
 
 .icon {
@@ -102,6 +106,20 @@ table {
     color: #274245;
 }
 
+.problem_list {
+    background-color: #DFD6AE;
+}
+
+#problemlist li
+{
+    list-style-type: none;
+    padding-right: 20px;
+}
+
+.asked_by
+{
+    font-size: 11px;
+}
 
 /* for form pages */
 

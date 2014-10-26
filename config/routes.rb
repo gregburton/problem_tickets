@@ -1,15 +1,14 @@
 Rails.application.routes.draw do
 
 
-  resources :users, :only => [:new, :create]
+  resources :users, :only => [:new, :create, :index]
   resources :logins, :only => [:new, :create, :destroy]
   resources :problems, :only => [:new, :show, :index, :create] do
     resources :notes, :only => [:create]
+
   end
 
   delete 'logout' => 'logins#destroy'
-
-  #delete 'login/destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
