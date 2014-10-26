@@ -91,6 +91,26 @@ a:active {
     color: #274245;
 }
 
+.tan {
+    background-color: #DFD6AE;
+}
+
+#list li
+{
+    list-style-type: none;
+    padding-right: 20px;
+}
+
+.asked_by
+{
+    font-size: 12px;
+}
+
+.dark {
+    color: #274245;
+    font-weight: bold;
+}
+
 /* on root (problems index) page */
 
 table {
@@ -104,21 +124,6 @@ table {
 
 .explain {
     color: #274245;
-}
-
-.problem_list {
-    background-color: #DFD6AE;
-}
-
-#problemlist li
-{
-    list-style-type: none;
-    padding-right: 20px;
-}
-
-.asked_by
-{
-    font-size: 11px;
 }
 
 /* for form pages */

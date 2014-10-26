@@ -5,15 +5,20 @@
     <%= render "layouts/getting_started" %>
   <% end %>
   <br>
-  <h3>Seems Everybody's Got Problems These Days</h3>
+  <h3 class="dark">Current Problems</h3>
   <% @problems.each do |problem| %>
-  <div class="problem_list">
-    <ul id="problemlist">
-
-      <li><h4><b><%= problem.description %></b></h4></li>
-      <li><%= truncate( problem.attempt, length: 75, separator: ' ')%></li>
-      <li><span class="asked_by">Asked by <%= problem.user.name %> <%= problem.created_at.strftime("on %m/%d/%Y at %I:%M%p") %></span></li>
-          <%= link_to 'Can you help?', problem_path(problem) %></li>
+  <div class="tan">
+    <ul id="list">
+      <li>
+        <h4><b>
+            <%= link_to problem.description, problem_path(problem) %>
+        </b></h4>
+      </li>
+      <li><%= truncate( problem.attempt, length: 50, separator: ' ')%></li>
+      <li>
+        <span class="asked_by">Asked by <%= problem.user.name %> <%= problem.created_at.strftime("on %m/%d/%Y at %I:%M%p") %>
+        </span>
+      </li>
     </ul>
   </div>
   <% end %>
