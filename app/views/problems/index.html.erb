@@ -8,10 +8,11 @@
 
   <% @problems.each do |problem| %>
   <ul>
+    <li><%= problem.created_at.strftime("On %m/%d/%Y at %I:%M%p") %></li>
+    <li><%= problem.user.name %> had a problem...</li>
     <li><%= problem.description %></li>
-    <li><%= problem.attempt %></li>
-    <li><%= problem.user.name %></li>
-    <li><%= link_to 'Read More...', problem_path(problem) %></li>
+    <li><%= truncate( problem.attempt, length: 50, separator: ' ')%>
+        <%= link_to 'Can you help?', problem_path(problem) %></li>
   </ul>
   <% end %>
 </div>
