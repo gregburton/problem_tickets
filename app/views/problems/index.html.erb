@@ -1,10 +1,10 @@
 <div class="content">
   <h1>Mo' Problems</h1>
   <p>Where collaboration ends frustration!</p>
-  <!--intention is to set this up so the getting started partial only displays when user is logged out
-  <# if logged_in? == nil %>-->
+  <% if logged_in? %>
+  <% else %>
     <%= render "layouts/getting_started" %>
-  <!--<# end %>-->
+  <% end %>
   <br>
   <b>List of Unanswered Problems</b> (listed in chronological order, with oldest on top)
   <br>
