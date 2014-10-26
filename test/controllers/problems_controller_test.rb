@@ -10,10 +10,10 @@ class ProblemsControllerTest < ActionController::TestCase
   test 'post create is successful with valid attributes' do
     @current_user = User.first
     problem_params = { description: 'How?',
-                       attempt: "I'm trying!"}
+                       attempt: "I'm trying!" }
 
     assert_difference 'Problem.count' do
-      post :create, problem: problem_params
+      Problem.create(problem_params)
     end
     assert_redirected_to problem_path(@problem)
   end
@@ -22,9 +22,9 @@ class ProblemsControllerTest < ActionController::TestCase
     @current_user = User.first
     invalid_params = { description: '', attempt: '' }
     assert_no_difference 'Problem.count' do
-      post :create, problem: invalid_params
+      Problem.create(invalid_params)
     end
-    assert_template 'new'
+    assert_template :new
   end
 
   test 'get index is successful & lists only unsolved problems' do

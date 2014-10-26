@@ -8,7 +8,7 @@ class NotesController < ApplicationController
     if @note.save
       flash.now[:notice] = "Answered!"
     else
-       flash.now[:notice] = "Your answer is invalid."
+      flash.now[:notice] = "Your answer is invalid."
     end
     redirect_to @problem
   end

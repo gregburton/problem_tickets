@@ -15,7 +15,7 @@ class UsersControllerTest < ActionController::TestCase
     assert_difference 'User.count' do
       post :create, user: user_params
     end
-    assert_redirected_to logins_new_path
+    assert_redirected_to new_login_path
   end
 
   test 'post create is unsuccessful with invalid attributes' do

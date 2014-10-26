@@ -3,7 +3,7 @@ class LoginsController < ApplicationController
   end
 
   def create
-    user = User.find_by(email: params[:session][:email].downcase)
+    user = User.find_by(email: params[:session][:email])
     if user && user.authenticate(params[:session][:password])
       login(user)
       flash[:notice] = "You've successfully logged in."

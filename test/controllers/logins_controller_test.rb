@@ -1,19 +1,56 @@
 require 'test_helper'
 
 class LoginsControllerTest < ActionController::TestCase
-  # test "should get new" do
-  #   get :new
-  #   assert_response :success
-  # end
-  #
-  # test "should get create" do
-  #   get :create
-  #   assert_response :success
-  # end
-  #
-  # test "should get destroy" do
-  #   get :destroy
-  #   assert_response :success
-  # end
+  context "GET :new" do
+    setup { get :new}
 
+    should respond_with(:ok)
+    should render_template(:new)
+  end
+
+  def valid_login_info
+    { email: users(:one).email,
+      password: "password",
+      password_confirmation: "password"}
+  end
+
+  def invalid_login_info
+    {email: "",
+     password: ""}
+  end
+
+  context "POST :create" do
+    context "when I send invalid information" do
+      should "not create session" do
+        setup { post :create, { session: invalid_login_attributes } }
+
+        should set_the_flash[:error]
+        should render_template(:new)
+      end
+    end
+    context "when I send valid info" do
+      setup { post :create, session: valid_login_info }
+
+      should "log in" do
+        assert_equal session[:user_id], @current_user
+      end
+
+      should "redirect to home" do
+        should respond_with(:ok)
+        assert_redirected_to root_path
+      end
+    end
+  end
+
+  context "DELETE sessions#destroy" do
+    setup { delete :destroy, {}, session }
+
+    should "redirect to home" do
+      assert_redirected_to root_path
+    end
+
+    should "log out" do
+      assert_nil session[:current_user_id]
+    end
+  end
 end
