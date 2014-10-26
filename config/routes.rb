@@ -7,7 +7,9 @@ Rails.application.routes.draw do
     resources :notes, :only => [:create]
   end
 
-  delete 'login/destroy'
+  delete 'logout' => 'logins#destroy'
+
+  #delete 'login/destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
