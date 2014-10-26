@@ -1,7 +1,6 @@
 <div class="content">
-  <h1>Problems#show</h1>
-  <p>Find me in app/views/problems/show.html.erb</p>
-  <br> The problem
+  <h1><%= @problem.description %></h1>
+  <p><%= @problem.attempt %></p>
   <br>
   <div class="notes_wrapper">
     <div class="row">
@@ -10,10 +9,12 @@
       </div>
     </div>
     <br>
-    <!--<# @notes.each do |note| %>
-      <p><#= note.text %></p>
-      <p>Answered by <#= note.user.name %></p>
-    <# end %>-->
+    <% @problem.notes.each do |note| %>
+      <ul>
+      <li><%= note.text %></li>
+      <li>Answered by <%= note.user.name %></li>
+      </ul>
+    <% end %>
   </div>
   <p>Create a new note</p>
   <div class="formwrap">

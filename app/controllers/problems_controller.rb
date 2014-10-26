@@ -19,6 +19,7 @@ class ProblemsController < ApplicationController
   end
 
   def index
+    @problems = Problem.where(solved: false)
   end
 
   private

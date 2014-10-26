@@ -1,5 +1,5 @@
 <div class="new_problem">
-  <%= form_for @problem, :url => new_problem_path do |f| %>
+  <%= form_for @problem, :url => problems_path do |f| %>
     <%= f.text_field :description, placeholder: "Problem description" %><br>
     <%= f.text_area :attempt, placeholder: "What you've tried so far to solve the Problem" %><br>
     <!--this shouldn't be necessary<%= f.text_area :user_id, placeholder: "User" %><br>-->

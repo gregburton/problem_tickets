@@ -9,12 +9,15 @@
   <b>List of Unanswered Problems</b> (listed in chronological order, with oldest on top)
   <br>
   <br>For each, include:
+  <% @problems.each do |problem| %>
   <ul>
-    <li>Entrant's name</li>
-    <li>Truncated description</li>
-    <li>Date/time created</li>
-    <li>Link to problem's show page</li>
+    <li><%= problem.created_at.strftime("On %m/%d/%Y at %I:%M%p") %></li>
+    <li><%= problem.user.name %> had a problem...</li>
+    <li><%= problem.description %></li>
+    <li><%= truncate( problem.attempt, length: 50, separator: ' ')%>
+        <%= link_to 'Can you help?', problem_path(problem) %></li>
   </ul>
+  <% end %>
 </div>
 
 
