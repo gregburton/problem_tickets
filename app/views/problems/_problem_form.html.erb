@@ -1,13 +1,8 @@
-<!--
-1) need to add the "f." back to each field and button
-2) need to remove the "_tag" from button
--->
-
 <div class="new_problem">
-  <!--<#= form_for @problems, :url => new_problem_path do |f| %>-->
-    <%= text_field :title, placeholder: "Problem Title" %><br>
-    <%= text_area :text, placeholder: "Question Body" %><br>
-    <%= text_area :user_id, placeholder: "User" %><br>
-    <%= button_tag :submit, class: "btn btn-large btn-success" %>
-  <!--<# end %>-->
+  <%= form_for @problem, :url => new_problem_path do |f| %>
+    <%= f.text_field :description, placeholder: "Problem description" %><br>
+    <%= f.text_area :attempt, placeholder: "What you've tried so far to solve the Problem" %><br>
+    <!--this shouldn't be necessary<%= f.text_area :user_id, placeholder: "User" %><br>-->
+    <%= f.button :submit, class: "btn btn-large btn-success" %>
+  <% end %>
 </div>
