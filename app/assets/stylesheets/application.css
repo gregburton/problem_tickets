@@ -70,6 +70,22 @@ h1 {
     max-width: 775px;
 }
 
+a:link {
+    color: #c46e3c;
+}
+
+a:visited {
+    color: #c46e3c;
+}
+
+a:hover {
+    color: #274245;
+}
+
+a:active {
+    color: #274245;
+}
+
 /* on root (problems index) page */
 
 table {
