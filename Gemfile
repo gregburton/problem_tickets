@@ -46,7 +46,6 @@ group :development do
   gem "did_you_mean"
   gem "quiet_assets"
   # gem "spring"
-  gem "faker"
 end
 
 group :test do
@@ -58,4 +57,4 @@ gem 'foundation-rails'
 gem 'simple_form'
 gem 'font-awesome-rails'
 gem 'rails_12factor'
-
+gem 'will_paginate', '~> 3.0'
