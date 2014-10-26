@@ -20,8 +20,7 @@ class ProblemsController < ApplicationController
   end
 
   def index
-    @problems = Problem.paginate(page: params[:page], per_page: 5)
-    @problems.where(solved: false)
+    @problems = Problem.where(solved: false).paginate(page: params[:page], per_page: 5)
   end
 
   def solved
