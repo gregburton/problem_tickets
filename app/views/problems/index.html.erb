@@ -6,17 +6,17 @@
     <%= render "layouts/getting_started" %>
   <% end %>
   <br>
-  <b>List of Unanswered Problems</b> (listed in chronological order, with oldest on top)
-  <br>
-  <br>For each, include:
+  <h3>Seems Everybody's Got Problems These Days</h3>
   <% @problems.each do |problem| %>
-  <ul>
-    <li><%= problem.created_at.strftime("On %m/%d/%Y at %I:%M%p") %></li>
-    <li><%= problem.user.name %> had a problem...</li>
-    <li><%= problem.description %></li>
-    <li><%= truncate( problem.attempt, length: 50, separator: ' ')%>
-        <%= link_to 'Can you help?', problem_path(problem) %></li>
-  </ul>
+  <div class="problem_list">
+    <ul id="problemlist">
+
+      <li><h4><b><%= problem.description %></b></h4></li>
+      <li><%= truncate( problem.attempt, length: 50, separator: ' ')%></li>
+      <li><span class="asked_by">Asked by <%= problem.user.name %> <%= problem.created_at.strftime("on %m/%d/%Y at %I:%M%p") %></span></li>
+          <%= link_to 'Can you help?', problem_path(problem) %></li>
+    </ul>
+  </div>
   <% end %>
 </div>
 
