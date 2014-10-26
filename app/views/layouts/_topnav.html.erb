@@ -6,21 +6,22 @@
     <li>
       <%= link_to 'New Problem', new_problem_path %>
     </li>
-    <!--<# if logged_in? == nil %>-->
+    <% if logged_in? == nil %>
       <li class="active">
         <%= link_to "Login", new_login_path %>
       </li>
-    <!--<# end %>
-    <# if logged_in? %>-->
+    <% end %>
+    <% if logged_in? %>
       <li>
         <span class="current_user">
-          Logged in as <b>Some Unidentified Human</b>
-          <!--<#= current_user.name %>-->
+          Logged in as
+          <b><%= current_user.name %></b>
+
         </span>
       </li>
-      <li> Logout
-        <!--<#= link_to "Logout", login_destroy_path, :method => :delete %>-->
+      <li>
+        <%= link_to "Logout", login_destroy_path, :method => :delete %>
       </li>
-    <!--<# end %>-->
+    <% end %>
   </ul>
 </div>
