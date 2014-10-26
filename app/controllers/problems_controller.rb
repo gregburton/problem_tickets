@@ -16,6 +16,7 @@ class ProblemsController < ApplicationController
 
   def show
     @problem = Problem.find(params[:id])
+    @note = Note.new
   end
 
   def index

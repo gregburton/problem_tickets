@@ -1,12 +1,12 @@
 <!--
 1) need to add the "f." back to each field and button
 -->
-  <!--<# if logged_in? %>
-    <#= form_for problems.note do |f| %>
-      <#= f.text_area :text, :placeholder => "add your answer here" %>
-      <#= button_tag 'Answer' %>
-    <# end %>
+ <% if logged_in? %>
+    <%= form_for @note, :url => problem_notes_path(@problem.id), :html => { :method => :post } do |f| %>
+      <%= f.text_area :text, :placeholder => "add your answer here" %>
+      <%= button_tag 'Answer' %>
+    <% end %>
 
-  <# else %>
-    <#= link_to 'Login to answer this question', new_login_path %>
-  <# end %>-->
+  <% else %>
+    <%= link_to 'Login to answer this question', new_login_path %>
+  <% end %>
