@@ -19,12 +19,13 @@ class ProblemsController < ApplicationController
   end
 
   def index
+    @problems = Problem.where(solved: false)
   end
 
   private
 
   def problem_params
-    params.require(:problem).permit(:description, :attempt)
+    params.require(:problem).permit(:description, :attempt )
   end
 
 
