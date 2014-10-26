@@ -10,9 +10,9 @@
   <div class="tan">
     <ul id="list">
       <li>
-        <h4><b>
-            <%= link_to problem.description, problem_path(problem) %>
-        </b></h4>
+        <h4>
+          <b><%= link_to problem.description, problem_path(problem) %></b>
+        </h4>
       </li>
       <li><%= truncate( problem.attempt, length: 50, separator: ' ')%></li>
       <li>

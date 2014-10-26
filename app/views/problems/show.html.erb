@@ -2,16 +2,19 @@
   <h1><%= @problem.description %></h1>
   <p><%= @problem.attempt %></p>
   <% if current_user == @problem.user %>
-    <p>If you've found the solution to this problem, mark it as
-    <%= link_to  solved_problem_path(@problem),  method: :put, data: { confirm: "Are you sure this is solved?"} do%>
-      Solved! <i class="fa fa-thumbs-up fa-4x"></i>
-    <% end %>
+    <p>
+      <h5 class="dark">
+        <%= link_to  solved_problem_path(@problem),  method: :put, data: { confirm: "Are you sure this is solved?"} do%>
+          <i class="fa fa-thumbs-up fa-2x"></i>
+         <% end %>
+         My problem has been solved
+      </h5>
     </p>
   <% end %>
   <br>
   <div class="notes_wrapper">
-    <h3 class="dark">Notes</h3>
     <% @problem.notes.each do |note| %>
+      <h3 class="dark">Notes</h3>
       <div class="tan">
         <ul id="list">
           <li><b><%= note.text %></b></li>
@@ -20,8 +23,6 @@
       </div>
     <% end %>
   </div>
-  <br>
-  <p><h3 class="dark">Create a new Note</h3></p>
   <div class="formwrap">
     <%= render "notes/note_form" %>
   </div>
