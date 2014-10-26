@@ -14,7 +14,7 @@
     <li><%= problem.description %></li>
     <li><%= problem.attempt %></li>
     <% user = User.where(id: problem.user_id)%>
-    <li><%= user.email %></li>
+    <li><%= user %></li>
     <li><%= link_to 'Read More...', problem_path(problem) %></li>
   </ul>
   <% end %>
