@@ -5,16 +5,13 @@
   <# if logged_in? == nil %>-->
     <%= render "layouts/getting_started" %>
   <!--<# end %>-->
-  <br>
-  <b>List of Unanswered Problems</b> (listed in chronological order, with oldest on top)
-  <br>
-  <br>For each, include:
+
   <% @problems.each do |problem| %>
   <ul>
     <li><%= problem.description %></li>
     <li><%= problem.attempt %></li>
     <% user = User.where(id: problem.user_id)%>
-    <li><%= user %></li>
+    <li><%= user.name %></li>
     <li><%= link_to 'Read More...', problem_path(problem) %></li>
   </ul>
   <% end %>
