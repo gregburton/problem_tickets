@@ -1,6 +1,5 @@
 <div class="content">
-  <h1><%= @problem.description %></h1>
-  <br>
+  <p><h2><%= @problem.description %></h2></p>
   <p><%= @problem.attempt %></p>
   <% if current_user == @problem.user %>
     <p>

@@ -1,13 +1,17 @@
 <div class="content">
   <% if logged_in? %>
-    <h1>Submit a Problem</h1>
+    <p></p>
+    <h2>Submit a Problem</h2>
     <p>Please provide a brief description of the problem and what you've tried to solve it so far.</p>
    <div class="formwrap">
      <%= render "problems/problem_form" %>
     </div>
   <% else %>
-    <br>
-    <h4>Login or <%= link_to "Register", new_user_path %> to submit your problem.</h4>
-    <%= render "logins/login_form" %>
+    <p></p>
+      <div class="formwrap">
+        <h2>Log in</h2>
+        <h4>(or <%= link_to "register for a new account", new_user_path %>)</h4>
+        <%= render "logins/login_form" %>
+      </div>
 <% end %>
 </div>
