@@ -18,7 +18,7 @@
       </li>
       <li><%= truncate( problem.attempt, length: 50, separator: ' ')%></li>
       <li>
-        <span class="asked_by">Asked by <%= problem.user.name %> <%= problem.created_at.strftime("on %m/%d/%Y at %I:%M%p") %>
+        <span class="asked_by">Submitted by <%= problem.user.name %> <%= problem.created_at.strftime("on %m/%d/%Y at %I:%M%p") %>
         </span>
       </li>
     </ul>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>We may have a solution!</title>
+</head>
+<body>
+<p>Hi <%= @user.name %>,</p>
+<p>It looks like <%= @author %> has suggested a solution to your problem.</p>
+<p>Check it out with the link below...</p>
+<p><%= link_to "Solution to your problem", problem_url(@problem) %></p>
+<p>Thanks!</p>
+<p>Mo'Problems Squad</p>
+</body>
+</html>

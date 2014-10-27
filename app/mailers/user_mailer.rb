@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: "from@example.com"
+  default from: "noreply@example.com"
 
   def create_problem_email(user, problem)
     @user = user
@@ -7,8 +7,10 @@ class UserMailer < ActionMailer::Base
     mail to: user.email, subject: "You have a problem...posted."
   end
 
-  def note_update_email
-    @user = user
-    mail to: user.email, subject: "We might have a solution!"
+  def note_update_email(author, problem)
+    @user = problem.user
+    @author = author.name
+    @problem = problem
+    mail to: @user.email, subject: "#{@author} might have a solution!"
   end
 end

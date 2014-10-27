@@ -6,7 +6,7 @@ class ProblemsController < ApplicationController
   def create
     @problem = current_user.problems.build(problem_params)
     if @problem.save
-      # UserMailer.create_problem_email(current_user, @problem).deliver_now
+      UserMailer.create_problem_email(current_user, @problem).deliver
       flash[:success] = "Your problem has been posted for solving."
       redirect_to problem_path(@problem)
     else
