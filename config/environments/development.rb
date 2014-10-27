@@ -2,7 +2,7 @@ Rails.application.configure do
 
   # mailcatcher requires these
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
+  config.action_mailer.smtp_settings = { :address => "localhost:3000"}
 
   # Settings specified here will take precedence over those in config/application.rb.
 

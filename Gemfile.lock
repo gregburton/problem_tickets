@@ -178,6 +178,7 @@ DEPENDENCIES
   foundation-rails
   jbuilder (~> 2.0)
   jquery-rails
+  mail
   pg
   pry-rails
   quiet_assets

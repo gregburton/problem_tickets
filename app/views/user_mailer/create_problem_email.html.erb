@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>You have a problem...posted</title>
+</head>
+<body>
+<p>Hi <%= @user.name %>,</p>
+<p>Thanks for posting your problem!</p>
+<p>Here's a link to your problem so you can check back on possible solutions.</p>
+<p><%= link_to "Your problem", problem_url(@problem) %></p>
+<p>We'll contact you if any posts any notes to your problem.</p>
+<p>Thanks!</p>
+<p>Mo'Problems Squad</p>
+</body>
+</html>
