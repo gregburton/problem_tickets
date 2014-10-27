@@ -59,3 +59,5 @@ gem 'font-awesome-rails'
 gem 'rails_12factor'
 gem 'will_paginate', '~> 3.0'
 gem 'mail'
+
+gem 'simplecov', :require => false, :group => :test
