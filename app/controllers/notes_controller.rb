@@ -6,7 +6,7 @@ class NotesController < ApplicationController
     @note.user = current_user
 
     if @note.save
-      UserMailer.note_update_email(current_user, @problem).deliver
+      # UserMailer.note_update_email(current_user, @problem).deliver
       flash.now[:notice] = "Answered!"
     else
       flash.now[:notice] = "Your answer is invalid."
