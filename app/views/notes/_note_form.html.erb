@@ -1,6 +1,6 @@
 <% if logged_in? %>
   <h3 class="dark">Create a new Note</h3>
-  <%= form_for @note, :url => problem_notes_path(@problem.id), :html => { :method => :post } do |f| %>
+  <%= form_for @note, url: problem_notes_path(@problem.id), remote: true do |f| %>
     <%= f.text_area :text, :placeholder => "Add your Note here" %>
     <%= button_tag 'Submit' %>
   <% end %>
@@ -8,3 +8,5 @@
 <% else %>
   <%= link_to 'Please log in to leave a Note for this Problem', new_login_path %>
 <% end %>
+
+

@@ -48,6 +48,11 @@ group :development do
   # gem "spring"
 end
 
+# Assets
+gem "font-awesome-rails"
+gem 'jquery-ui-rails'
+gem "foundation-rails"
+
 group :test do
   gem 'shoulda'
   gem 'capybara'

@@ -13,7 +13,9 @@
   <% end %>
   <br>
   <h3 class="dark"><%= pluralize(@problem.notes.count, "Note") %></h3>
-  <%= render @notes %>
+  <div class="notes_wrapper" id="notes">
+    <%= render @notes %>
+  </div>
   <br>
   <div class="formwrap">
     <%= render "notes/note_form" %>

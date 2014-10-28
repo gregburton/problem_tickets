@@ -5,13 +5,25 @@ class NotesController < ApplicationController
     @note = @problem.notes.build(note_params)
     @note.user = current_user
 
-    if @note.save
-      # UserMailer.note_update_email(current_user, @problem).deliver
-      flash.now[:notice] = "Answered!"
-    else
-      flash.now[:notice] = "Your answer is invalid."
+    respond_to do |format|
+      format.html do
+        if @note.save
+          # UserMailer.note_update_email(current_user, @problem).deliver
+          flash.now[:notice] = "Answered!"
+        else
+          flash.now[:notice] = "Your answer is invalid."
+        end
+        redirect_to @problem
+      end
+
+      format.js do
+        if @note.save
+          render :create, status: :created
+        else
+          render nothing: true, status: :bad_request
+        end
+      end
     end
-    redirect_to @problem
   end
 
   private
