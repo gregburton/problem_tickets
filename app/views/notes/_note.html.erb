@@ -1,0 +1,8 @@
+<div class="notes_wrapper">
+    <div class="tan">
+      <ul id="list">
+        <li><b><%= note.text %></b></li>
+        <li><span class="asked_by"><%= "Submitted by #{note.user.name} #{note.created_at.strftime("on %m/%d/%Y at %I:%M%p")}" %> </span></li>
+      </ul>
+    </div>
+</div>

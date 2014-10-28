@@ -8,22 +8,7 @@
   <% end %>
   <br>
   <h3 class="dark">Current Problems</h3>
-  <% @problems.each do |problem| %>
-  <div class="tan">
-    <ul id="list">
-      <li>
-        <h4>
-          <b><%= link_to problem.description, problem_path(problem) %></b>
-        </h4>
-      </li>
-      <li><%= truncate( problem.attempt, length: 75, separator: ' ')%></li>
-      <li>
-        <span class="asked_by">Submitted by <%= problem.user.name %> <%= problem.created_at.strftime("on %m/%d/%Y at %I:%M%p") %>
-        </span>
-      </li>
-    </ul>
-  </div>
-  <% end %>
+  <%= render @problems %>
   <div class="paginate">
     <b><%= will_paginate @problems %></b>
   </div>
