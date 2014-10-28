@@ -10,8 +10,7 @@ class LoginsControllerTest < ActionController::TestCase
 
   def valid_login_info
     { email: users(:one).email,
-      password: "password",
-      password_confirmation: "password"}
+      password: "password"}
   end
 
   def invalid_login_info
@@ -20,13 +19,11 @@ class LoginsControllerTest < ActionController::TestCase
   end
 
   context "POST :create" do
-    context "when I send invalid information" do
-      should "not create session" do
-        setup { post :create, { session: invalid_login_attributes } }
+    context "when I send invalid information, should not creat session" do
+      setup { post :create, { session: invalid_login_info } }
 
-        should set_the_flash[:error]
-        should render_template(:new)
-      end
+      should set_the_flash[:error]
+      should render_template(:new)
     end
     context "when I send valid info" do
       setup { post :create, session: valid_login_info }
@@ -36,7 +33,7 @@ class LoginsControllerTest < ActionController::TestCase
       end
 
       should "redirect to home" do
-        should respond_with(:ok)
+        assert_response :ok
         assert_redirected_to root_path
       end
     end
