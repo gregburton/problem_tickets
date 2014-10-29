@@ -10,5 +10,17 @@
       <span class="asked_by">Submitted by <%= problem.user.name %> <%= problem.created_at.strftime("on %m/%d/%Y at %I:%M%p") %>
       </span>
     </li>
+    <li>
+      <% if current_user == problem.user %>
+      <p>
+        <h6 class="dark">
+          <%= link_to  solved_problem_path(problem),  method: :put, data: { confirm: "Are you sure this is solved?"} do%>
+           <i class="fa fa-thumbs-up fa-2x"></i>
+      <% end %>
+        My problem has been solved
+        </h5>
+      </p>
+    </li>
+<% end %>
   </ul>
 </div>

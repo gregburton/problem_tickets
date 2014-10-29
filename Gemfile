@@ -58,9 +58,7 @@ group :test do
   gem 'capybara'
 end
 
-gem 'foundation-rails'
 gem 'simple_form'
-gem 'font-awesome-rails'
 gem 'rails_12factor'
 gem 'will_paginate', '~> 3.0'
 gem 'mail'
