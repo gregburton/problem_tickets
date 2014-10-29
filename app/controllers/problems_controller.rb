@@ -28,7 +28,14 @@ class ProblemsController < ApplicationController
   def solved
     @problem = Problem.find(params[:id])
     @problem.update_attributes(solved: true)
-    redirect_to root_path
+    respond_to do |format|
+      format.html do
+        redirect_to root_path
+      end
+      format.js do
+        render :solved, status: 200
+      end
+    end
   end
 
   private
