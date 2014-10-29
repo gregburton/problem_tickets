@@ -1,27 +1,28 @@
-<div class="tan">
-  <ul id="list">
-    <li>
-    <h4>
-      <b><%= link_to problem.description, problem_path(problem) %></b>
-      </h4>
-    </li>
-    <li><%= truncate( problem.attempt, length: 75, separator: ' ')%></li>
-    <li>
-      <span class="asked_by">Submitted by <%= problem.user.name %> <%= problem.created_at.in_time_zone('Eastern Time (US & Canada)').strftime("on %m/%d/%Y at %I:%M%p") %>
-      </span>
-    </li>
-    <li>
-      <% if current_user == problem.user %>
-      <p>
-        <h6 class="dark">
-          <%= link_to  solved_problem_path(problem),  method: :put do%>
-            <!--, data: { confirm: "Are you sure this is solved?"}-->
-           <i class="fa fa-thumbs-up fa-2x"></i>
-      <% end %>
-        My problem has been solved
-        </h5>
-      </p>
-    </li>
-<% end %>
-  </ul>
+<div id="<%= dom_id(problem) %>">
+  <div class="tan">
+    <ul id="list">
+      <li>
+      <h4>
+        <b><%= link_to problem.description, problem_path(problem) %></b>
+        </h4>
+      </li>
+      <li><%= truncate( problem.attempt, length: 75, separator: ' ')%></li>
+      <li>
+        <span class="asked_by">Submitted by <%= problem.user.name %> <%= problem.created_at.in_time_zone('Eastern Time (US & Canada)').strftime("on %m/%d/%Y at %I:%M%p") %>
+        </span>
+      </li>
+      <li>
+        <% if current_user == problem.user %>
+        <p>
+          <h6 class="dark">
+            <%= link_to  solved_problem_path(problem),  method: :put, remote: true do%>
+             <i class="fa fa-thumbs-up fa-2x"></i>
+        <% end %>
+          My problem has been solved
+          </h5>
+        </p>
+      </li>
+  <% end %>
+    </ul>
+  </div>
 </div>

@@ -1,1 +1,2 @@
-$("#<#= dom_id(@problem) %>").replaceWith("<#= j render(@problem) %>");
+$("#<%= dom_id(@problem) %>").remove();
+//$("#<#= dom_id(@problem) %>").replaceWith("<#= j render(@problem) %>");

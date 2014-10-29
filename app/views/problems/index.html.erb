@@ -8,7 +8,9 @@
   <% end %>
   <br>
   <h3 class="dark">Current Problems</h3>
-  <%= render @problems %>
+  <div id="problems">
+    <%= render @problems %>
+  </div>
   <div class="paginate">
     <b><%= will_paginate @problems %></b>
   </div>
