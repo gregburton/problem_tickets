@@ -14,7 +14,8 @@
       <% if current_user == problem.user %>
       <p>
         <h6 class="dark">
-          <%= link_to  solved_problem_path(problem),  method: :put, data: { confirm: "Are you sure this is solved?"} do%>
+          <%= link_to  solved_problem_path(problem),  method: :put do%>
+            <!--, data: { confirm: "Are you sure this is solved?"}-->
            <i class="fa fa-thumbs-up fa-2x"></i>
       <% end %>
         My problem has been solved
