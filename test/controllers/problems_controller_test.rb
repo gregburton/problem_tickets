@@ -39,5 +39,4 @@ class ProblemsControllerTest < ActionController::TestCase
     assert_equal problems(:one), assigns(:problem)
     assert_response :success
   end
-
 end

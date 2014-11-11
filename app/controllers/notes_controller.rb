@@ -9,9 +9,9 @@ class NotesController < ApplicationController
       format.html do
         if @note.save
           # UserMailer.note_update_email(current_user, @problem).deliver
-          flash.now[:notice] = "Answered!"
+          flash.now[:notice] = 'Answered!'
         else
-          flash.now[:notice] = "Your answer is invalid."
+          flash.now[:notice] = 'Your answer is invalid.'
         end
         redirect_to @problem
       end

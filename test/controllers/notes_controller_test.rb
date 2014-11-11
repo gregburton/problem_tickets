@@ -1,13 +1,12 @@
 require 'test_helper'
 
 class NotesControllerTest < ActionController::TestCase
-
   test 'post create is successful with valid attributes' do
     @problem = Problem.first
     @current_user = User.first
 
     assert_difference 'Note.count' do
-      Note.create(text: "text")
+      Note.create(text: 'text')
     end
     assert_redirected_to problem_path(@problem)
   end
@@ -21,5 +20,4 @@ class NotesControllerTest < ActionController::TestCase
     end
     assert_template :new
   end
-
 end

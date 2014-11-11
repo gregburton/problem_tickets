@@ -8,4 +8,3 @@ class ProblemTest < ActiveSupport::TestCase
   should validate_presence_of(:attempt)
   should validate_presence_of(:user_id)
 end
-

@@ -11,7 +11,7 @@ class UsersControllerTest < ActionController::TestCase
     user_params = { name: 'Albert',
                     email: 'albert@me.org',
                     password: 'password',
-                    password_confirmation: 'password'}
+                    password_confirmation: 'password' }
     assert_difference 'User.count' do
       post :create, user: user_params
     end
@@ -19,11 +19,13 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test 'post create is unsuccessful with invalid attributes' do
-    invalid_params = { name: '', email: '', password: '', password_confirmation: '' }
+    invalid_params = { name: '',
+                       email: '',
+                       password: '',
+                       password_confirmation: '' }
     assert_no_difference 'User.count' do
       post :create, user: invalid_params
     end
     assert_template 'new'
   end
-
 end

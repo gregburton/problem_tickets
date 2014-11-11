@@ -7,10 +7,10 @@ class ProblemsController < ApplicationController
     @problem = current_user.problems.build(problem_params)
     if @problem.save
       # UserMailer.create_problem_email(current_user, @problem).deliver
-      flash[:success] = "Your problem has been posted for solving."
+      flash[:success] = 'Your problem has been posted for solving.'
       redirect_to problem_path(@problem)
     else
-      flash[:error] = "There was a problem with your problem. Seriously."
+      flash[:error] = 'There was a problem with your problem. Seriously.'
       render :new
     end
   end
@@ -22,7 +22,8 @@ class ProblemsController < ApplicationController
   end
 
   def index
-    @problems = Problem.where(solved: false).paginate(page: params[:page], per_page: 5)
+    @problem_where = Problem.where(solved: false)
+    @problems = @problem_where.paginate(page: params[:page], per_page: 5)
   end
 
   def solved
@@ -43,6 +44,5 @@ class ProblemsController < ApplicationController
   def problem_params
     params.require(:problem).permit(:description, :attempt)
   end
-
 
 end
