@@ -48,13 +48,6 @@ group :development do
   # gem "spring"
 end
 
-# quality metrics gems
-group :development, :test do
-  gem "rubocop", require: false
-  gem "rails_best_practices", require: false
-  gem "brakeman", require: false
-end
-
 # Assets
 gem "font-awesome-rails"
 gem 'jquery-ui-rails'
@@ -64,6 +57,19 @@ group :test do
   gem 'shoulda'
   gem 'capybara'
 end
+
+# quality metrics gems
+group :development, :test do
+  gem "rubocop", require: false
+  gem "rails_best_practices", require: false
+  gem "brakeman", require: false
+end
+
+# image upload gems
+gem 'paperclip', '~> 4.2'
+gem 'sidekiq'
+gem 'slim'
+gem 'sinatra', require: false
 
 gem 'simple_form'
 gem 'rails_12factor'
