@@ -1,9 +1,16 @@
-<div class="row">
-  <div class="small-12 columns">
-    <%= simple_form_for @photo do |f| %>
-      <%= f.input :caption %>
-      <%= f.file_field :image %>
-      <%= f.button :submit %>
-    <% end %>
+<div class="content">
+  <p></p>
+  <h2>Submit a Photo</h2>
+  <p>Because seeing is believing.</p>
+  <div class="negative_formwrap">
+    <div class="row">
+      <div class="large-12 columns">
+        <%= simple_form_for @photo do |f| %>
+          <%= f.text_area :caption, placeholder: "Please provide a caption for your photo"%>
+          <%= f.file_field :image %>
+          <%= f.button :submit, class: "btn btn-large btn-success" %>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>

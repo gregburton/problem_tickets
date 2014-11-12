@@ -75,5 +75,6 @@ gem 'simple_form'
 gem 'rails_12factor'
 gem 'will_paginate', '~> 3.0'
 gem 'mail'
+gem 'table_print'
 
 gem 'simplecov', :require => false, :group => :test

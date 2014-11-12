@@ -1,6 +1,11 @@
-<div class="row">
-  <div class="small-12 columns">
-    <%= image_tag @photo.image.url(:medium) %>
-      <div><%= @photo.caption %></div>
+<div class="content">
+  <p></p>
+  <h2><%= @photo.caption %></h2>
+  <div class="photo_wrap">
+    <div class="row">
+      <div class="small-12 columns">
+        <%= image_tag @photo.image.url(:medium) %>
+      </div>
+    </div>
   </div>
 </div>
